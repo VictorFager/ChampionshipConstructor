@@ -1,2 +1,55 @@
 @import "normalize.css";
 @import "reset.css";
+
+
+/* VARIABLES */
+
+:root {
+  /* Colors */
+  --main-blue: #36C5DC;
+  --light-blue: #DCF5F9;
+  --main-orange: #FF6F29;
+  --main-gray: #494949;
+  --light-gray: #7C7A7A;
+  --main-black: #000;
+  --main-white: #fff;
+
+  /* Font Sizes */
+  --base-size: 10px;
+  --logo-text: 4.2rem;
+
+  /* UI sizes */
+  --main-area-max-width: 1400px;
+}
+
+
+/* FONT DEFAULTS */
+
+html {
+  font-size: var(--base-size);
+}
+
+h1 {
+  font-size: var(--logo-text);
+  font-family: 'Nabla', sans-serif;
+}
+
+
+/* GENERAL */
+
+header {
+  background-color: var(--main-blue);
+}
+
+body {
+  background-color: var(--light-blue);
+}
+
+h1 {
+  padding: 2rem 0;
+  margin: 0 auto;
+  max-width: var(--main-area-max-width);
+  text-align: center;
+}
+
+/* HOMEPAGE */

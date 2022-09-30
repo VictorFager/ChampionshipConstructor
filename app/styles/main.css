@@ -68,6 +68,10 @@ h1 {
   line-height: var(--header-height);
 }
 
+.hidden {
+  display: none;
+}
+
 /* HOMEPAGE */
 
 main {
@@ -78,7 +82,7 @@ main {
   align-items: center;
 }
 
-.menu {
+.create {
   flex-grow: 3;
   text-align: center;
 }
@@ -151,23 +155,26 @@ main {
   padding-bottom: 2rem;
 }
 
-.history li {
+.history li button {
   font-size: 2.6rem;
   font-family: var(--main-font);
   padding: 2rem;
+  width: 100%;
   background-color: var(--main-blue-lightened);
   margin-bottom: 2rem;
   border-radius: 1rem;
   color: var(--main-gray);
+  cursor: pointer;
+  user-select: none;
 }
 
-.history li:hover,
-.history li:focus {
+.history li button:hover,
+.history li button:focus {
   box-shadow: -4px 4px var(--main-yellow), -8px 8px var(--main-orange);
   transform: translate(8px, -8px);
 }
 
-.history li:active {
+.history li button:active {
   filter: brightness(95%);
   box-shadow: -4px 4px var(--main-orange);
   transform: translate(4px, -4px);

@@ -26,93 +26,104 @@
 
     <!-- HOME -->
 
-    <section id="create-section" class="create hidden">
-      <button id="create-button" class="create-button">
-        Create Championship
-        <div class="button-overlay"></div>
-      </button>
+    <div id="home-view" class="home-view hidden">
 
-    </section>
+      <section id="create-section" class="create">
+        <button id="create-button" class="create-button">
+          Create Championship
+          <div class="button-overlay"></div>
+        </button>
+      </section>
 
-    <aside id="history-section" class="history hidden">
-      <h2>History</h2>
-      <ul>
-        <li><button>Mega Gamenight</button></li>
-        <li><button>4-Kampen</button></li>
-      </ul>
-      <div class="history-overlay"></div>
-    </aside>
+      <aside id="history-section" class="history">
+        <h2>History</h2>
+        <ul>
+          <li><button>Mega Gamenight</button></li>
+          <li><button>4-Kampen</button></li>
+        </ul>
+        <div class="history-overlay"></div>
+      </aside>
+
+    </div>
 
 
     <!-- CREATE -->
 
-    <section id="create-form-section" class="create-form">
-      <form action="">
-        <section>
-          <fieldset>
-            <legend>Championship type</legend>
+    <div id="create-view" class="create-view">
+
+      <section id="create-form-section" class="create-form">
+
+        <form action="" id="create-form">
+          <section>
+            <fieldset>
+              <legend>Championship type</legend>
+              <ul>
+                <li>
+                  <label for="ch-type-tournament">Tournament</label>
+                  <input type="radio" name="ch-type" id="ch-type-tournament" value="tournament" checked>
+                </li>
+                <li>
+                  <label for="ch-type-league">League</label>
+                  <input type="radio" name="ch-type" id="ch-type-league" value="league">
+                </li>
+              </ul>
+            </fieldset>
+
+            <p>
+              <label for="ch-name">Championship name</label>
+              <input id="ch-name" type="text" name="ch-name">
+            </p>
+          </section>
+
+          <section>
             <ul>
               <li>
-                <label for="ch-type-tournament">Tournament</label>
-                <input type="radio" name="ch-type" id="ch-type-tournament" value="tournament" checked>
+                <input type="text" value="Player 1" readonly>
+                <button type="button">x</button>
               </li>
               <li>
-                <label for="ch-type-league">League</label>
-                <input type="radio" name="ch-type" id="ch-type-league" value="league">
+                <input type="text">
+                <button type="button">x</button>
               </li>
+
             </ul>
-          </fieldset>
+            <button type="button">Add Player</button>
+          </section>
 
-          <p>
-            <label for="ch-name">Championship name</label>
-            <input id="ch-name" type="text" name="ch-name">
-          </p>
-        </section>
+          <section>
+            <button type="submit">Generate Championship</button>
+          </section>
 
-        <section>
-          <ul>
-            <li>
-              <input type="text" value="Player 1" readonly>
-              <button>x</button>
-            </li>
-            <li>
-              <input type="text">
-              <button>x</button>
-            </li>
+        </form>
 
-          </ul>
-          <button>Add Player</button>
-        </section>
+        <button id="back-button">Go Back</button>
+      </section>
 
-        <section>
-          <button>Generate Championship</button>
-        </section>
-
-      </form>
-      <button id="back-button">Go Back</button>
-    </section>
+    </div>
 
 
-    <!-- TURNERING / LIGA
+    <!-- CHAMPIONSHIP -->
 
-    <section class="tournament-bracket">
-      GENERERAD TURNERING
-    </section>
+    <div id="championship-view" class="championship-view hidden">
+      <section class="tournament-bracket">
+        GENERERAD TURNERING
+      </section>
 
-    <section class="league-table">
-      GENERERAD TABELL
-    </section>
+      <section class="league-table">
+        GENERERAD TABELL
+      </section>
 
-    <section class="league-matches">
-      GENERERAT MATCHSCHEMA
-    </section>
+      <section class="league-matches">
+        GENERERAT MATCHSCHEMA
+      </section>
 
-    <section class="controls">
-      <button>Change Settings</button>
-      <button>Pause Championship</button>
-    </section>
+      <section class="controls">
+        <button id="change-settings-button">Change Settings</button>
+        <button id="pause-button">Pause Championship</button>
+      </section>
+    </div>
 
-    -->
+
 
 
     <!-- MATCH POPUP

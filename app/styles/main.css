@@ -68,18 +68,16 @@ h1 {
   line-height: var(--header-height);
 }
 
-.hidden {
-  display: none;
-}
 
 /* HOMEPAGE */
 
-main {
+
+.home-view {
   display: flex;
+  align-items: center;
   margin: 0 auto;
   max-width: var(--main-area-max-width);
   height: var(--main-area-height);
-  align-items: center;
 }
 
 .create {
@@ -183,11 +181,19 @@ main {
 
 /* CREATE */
 
+/* Temporary styling for easier testing */
+
+.create-view {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--main-area-max-width);
+  height: var(--main-area-height);
+}
+
 .create-form {
   font-size: 2.2rem;
 }
-
-/* Temporary styling for easier testing */
 
 .create-form button {
   margin: 1rem 0;
@@ -214,4 +220,34 @@ main {
 .create-form li {
   display: inline-block;
   margin-top: 1.6rem;
+}
+
+/* CHAMPIONSHIP */
+
+/* Temporary styling for easier testing */
+
+.championship-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.2rem;
+  margin: 0 auto;
+  max-width: var(--main-area-max-width);
+  height: var(--main-area-height);
+}
+
+.championship-view section {
+  margin-top: 2rem;
+}
+
+.championship-view .controls button {
+  margin: 1rem 0;
+  padding: 1.6rem 3.2rem;
+}
+
+/* BEHAVIOUR */
+
+.hidden {
+  display: none;
 }

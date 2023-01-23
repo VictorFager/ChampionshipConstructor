@@ -1,12 +1,16 @@
 // DOM nodes
 
 const dMain = document.getElementById('main-content');
-const dCreateSection = document.getElementById('create-section');
-const dHistorySection = document.getElementById('history-section');
-const dCreateFormSection = document.getElementById('create-form-section');
+const dHomeView = document.getElementById('home-view');
+const dCreateView = document.getElementById('create-view');
+const dChampionshipView = document.getElementById('championship-view');
 
 const dCreateButton = document.getElementById('create-button');
 const dBackButton = document.getElementById('back-button');
+const dChangeSettingsButton = document.getElementById('change-settings-button');
+const dPauseButton = document.getElementById('pause-button');
+
+const dCreateForm = document.getElementById('create-form');
 
 
 // Event Listeners
@@ -20,20 +24,38 @@ dBackButton.addEventListener('click', () => {
   updateView('home');
 })
 
+dCreateForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  updateView('championship')
+})
+
+dChangeSettingsButton.addEventListener('click', () => {
+  updateView('create');
+})
+
+dPauseButton.addEventListener('click', () => {
+  updateView('home');
+})
+
 
 // Functions
 
 function updateView(newView) {
   switch (newView) {
     case 'home':
-      dCreateFormSection.classList.toggle('hidden');
-      dCreateSection.classList.toggle('hidden');
-      dHistorySection.classList.toggle('hidden');
+      dHomeView.classList.remove('hidden');
+      dCreateView.classList.add('hidden');
+      dChampionshipView.classList.add('hidden');
       break;
     case 'create':
-      dCreateSection.classList.toggle('hidden');
-      dHistorySection.classList.toggle('hidden');
-      dCreateFormSection.classList.toggle('hidden');
+      dHomeView.classList.add('hidden');
+      dCreateView.classList.remove('hidden');
+      dChampionshipView.classList.add('hidden');
+      break;
+    case 'championship':
+      dHomeView.classList.add('hidden');
+      dCreateView.classList.add('hidden');
+      dChampionshipView.classList.remove('hidden');
       break;
   }
 }

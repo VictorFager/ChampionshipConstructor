@@ -101,7 +101,7 @@ main {
 }
 
 .create-button:hover,
-.create-button:focus {
+.create-button:focus-visible {
   box-shadow: -4px 4px var(--main-yellow), -8px 8px var(--main-orange);
   transform: translate(8px, -8px);
 }
@@ -169,7 +169,7 @@ main {
 }
 
 .history li button:hover,
-.history li button:focus {
+.history li button:focus-visible {
   box-shadow: -4px 4px var(--main-yellow), -8px 8px var(--main-orange);
   transform: translate(8px, -8px);
 }
@@ -178,4 +178,40 @@ main {
   filter: brightness(95%);
   box-shadow: -4px 4px var(--main-orange);
   transform: translate(4px, -4px);
+}
+
+
+/* CREATE */
+
+.create-form {
+  font-size: 2.2rem;
+}
+
+/* Temporary styling for easier testing */
+
+.create-form button {
+  margin: 1rem 0;
+  padding: 1.6rem 3.2rem;
+}
+
+.create-form input[type=text] {
+  padding: 1.6rem;
+}
+
+.create-form section {
+  margin-top: 2rem;
+}
+
+.create-form fieldset {
+  margin-bottom: 2rem;
+}
+
+.create-form input[type=radio] {
+  margin: 0 2rem 0 1rem;
+  transform: scale(2)
+}
+
+.create-form li {
+  display: inline-block;
+  margin-top: 1.6rem;
 }

@@ -53,9 +53,15 @@ function updateView(newView) {
       dChampionshipView.classList.add('hidden');
       break;
     case 'championship':
+      setupChampionshipView();
       dHomeView.classList.add('hidden');
       dCreateView.classList.add('hidden');
       dChampionshipView.classList.remove('hidden');
       break;
   }
+}
+
+function setupChampionshipView() {
+  let formData = new FormData(dCreateForm);
+  console.log(formData);
 }

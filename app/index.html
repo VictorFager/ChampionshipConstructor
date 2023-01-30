@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Championship Constructor</title>
   <link rel="stylesheet" href="styles/main.css">
-  <script src="app.js" defer></script>
+  <script src="app.js" type="module"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,11 +65,11 @@
               <ul>
                 <li>
                   <label for="ch-type-tournament">Tournament</label>
-                  <input type="radio" name="ch-type" id="ch-type-tournament" value="tournament" checked>
+                  <input type="radio" name="ch-type" id="ch-type-tournament" value="tournament" disabled>
                 </li>
                 <li>
                   <label for="ch-type-league">League</label>
-                  <input type="radio" name="ch-type" id="ch-type-league" value="league">
+                  <input type="radio" name="ch-type" id="ch-type-league" value="league" checked>
                 </li>
               </ul>
             </fieldset>
@@ -81,18 +81,21 @@
           </section>
 
           <section>
-            <ul>
+            <ul id="player-input-list">
               <li>
-                <input type="text" name="player1" value="Player 1" readonly>
-                <button type="button">x</button>
+                <input type="text" name="player" value="Player 1">
+                <button class="remove-button" type="button">x</button>
               </li>
-              <!-- <li>
-                <input type="text">
-                <button type="button">x</button>
-              </li> -->
-
+              <li>
+                <input type="text" name="player" value="Player 2">
+                <button class="remove-button" type="button">x</button>
+              </li>
+              <li>
+                <input type="text" name="player" value="Player 3">
+                <button class="remove-button" type="button">x</button>
+              </li>
             </ul>
-            <button type="button">Add Player</button>
+            <button id="add-player-button" type="button">Add Player</button>
           </section>
 
           <section>

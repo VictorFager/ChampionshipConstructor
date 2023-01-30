@@ -218,8 +218,9 @@ h1 {
 }
 
 .create-form li {
-  display: inline-block;
+  display: inline-flex;
   margin-top: 1.6rem;
+
 }
 
 /* CHAMPIONSHIP */

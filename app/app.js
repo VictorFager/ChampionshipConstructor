@@ -1,3 +1,6 @@
+// Imports
+import { components } from './modules/components.js';
+
 // DOM nodes
 
 const dMain = document.getElementById('main-content');
@@ -9,8 +12,12 @@ const dCreateButton = document.getElementById('create-button');
 const dBackButton = document.getElementById('back-button');
 const dChangeSettingsButton = document.getElementById('change-settings-button');
 const dPauseButton = document.getElementById('pause-button');
+const dAddPlayerButton = document.getElementById('add-player-button');
+const dRemoveButtons = document.getElementsByClassName('remove-button');
 
 const dCreateForm = document.getElementById('create-form');
+const dPlayerInputList = document.getElementById('player-input-list');
+
 
 
 // Event Listeners
@@ -22,20 +29,24 @@ dCreateButton.addEventListener('click', (event) => {
 
 dBackButton.addEventListener('click', () => {
   updateView('home');
-})
+});
 
 dCreateForm.addEventListener('submit', (event) => {
   event.preventDefault();
   updateView('championship')
-})
+});
 
 dChangeSettingsButton.addEventListener('click', () => {
   updateView('create');
-})
+});
 
 dPauseButton.addEventListener('click', () => {
   updateView('home');
-})
+});
+
+dAddPlayerButton.addEventListener('click', () => {
+  addPlayer();
+});
 
 
 // Functions
@@ -63,5 +74,12 @@ function updateView(newView) {
 
 function setupChampionshipView() {
   let formData = new FormData(dCreateForm);
-  console.log(formData);
+  let pInfo = document.createElement('p');
+  pInfo.textContent = formData.get('ch-type') + " | " + formData.get('ch-name') + " | " + formData.getAll('player');
+  dChampionshipView.appendChild(pInfo);
+}
+
+function addPlayer() {
+  const playerInputElement = components.createPlayerInputElement();
+  dPlayerInputList.appendChild(playerInputElement);
 }

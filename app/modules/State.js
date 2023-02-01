@@ -2,6 +2,8 @@ export class State {
 
   static #state = {
     activeChampionship: {},
+    history: {},
+    nextHistoryID: 0
   }
 
   static hasActiveChampionship() {
@@ -22,5 +24,17 @@ export class State {
 
   static removeActiveChampionship() {
     this.#state.activeChampionship = {};
+  }
+
+  static addHistoryChampionship(championship) {
+    const idString = this.#state.nextHistoryID.toString();
+    this.#state.nextHistoryID++;
+    this.#state.history[idString] = championship;
+    console.log(this.#state.history);
+    return idString;
+  }
+
+  static removeHistoryChampionship(historyID) {
+    return 0;
   }
 }

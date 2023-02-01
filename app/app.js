@@ -16,7 +16,7 @@ const dBackButton = document.getElementById('back-button');
 const dChangeSettingsButton = document.getElementById('change-settings-button');
 const dPauseButton = document.getElementById('pause-button');
 const dAddPlayerButton = document.getElementById('add-player-button');
-const dRemoveButtons = document.querySelectorAll('.remove-button');
+//const dRemoveButtons = document.querySelectorAll('.remove-button');
 
 const dCreateForm = document.getElementById('create-form');
 const dPlayerInputList = document.getElementById('player-input-list');
@@ -54,7 +54,7 @@ dPauseButton.addEventListener('click', () => {
 
 dAddPlayerButton.addEventListener('click', addPlayer);
 
-dRemoveButtons.forEach(dButton => {
+document.querySelectorAll('.remove-button').forEach(dButton => {
   dButton.addEventListener('click', () => {
     dButton.parentElement.remove()
   })
@@ -88,7 +88,8 @@ function updateView(newView) {
 
 function setupHomeView() {
   if (State.hasActiveChampionship()) {
-    const historyElement = components.createHistoryListElement(State.getActiveChampionship().name);
+    const historyID = State.addHistoryChampionship(State.getActiveChampionship());
+    const historyElement = components.createHistoryListElement(State.getActiveChampionship().name, historyID);
     dHistoryList.appendChild(historyElement);
     State.removeActiveChampionship();
   }
@@ -98,12 +99,25 @@ function setupCreateView() {
   if (State.hasActiveChampionship()) {
     dCreateForm.querySelector('#ch-type-tournament').disabled = true;
     dCreateForm.querySelector('#ch-type-league').disabled = true;
+
+    document.querySelectorAll('.remove-button').forEach(dButton => {
+      dButton.disabled = true;
+    });
+
     dAddPlayerButton.disabled = true;
     dCreateSubmitButton.textContent = 'Continue Championship';
     dBackButton.disabled = true;
-    dRemoveButtons.forEach(dButton => {
-      dButton.disabled = true;
-    })
+
+  } else {
+    const dRadioTournament = dCreateForm.querySelector('#ch-type-tournament');
+    dRadioTournament.disabled = false;
+    dRadioTournament.checked = true;
+    dCreateForm.querySelector('#ch-type-league').disabled = false;
+    dCreateForm.querySelector('#ch-name').value = '';
+    dPlayerInputList.replaceChildren(components.createPlayerInputElement());
+    dAddPlayerButton.disabled = false;
+    dCreateSubmitButton.textContent = 'Generate Championship';
+    dBackButton.disabled = false;
   }
 }
 
@@ -114,6 +128,5 @@ function setupChampionshipView() {
 }
 
 function addPlayer() {
-  const playerInputElement = components.createPlayerInputElement();
-  dPlayerInputList.appendChild(playerInputElement);
+  dPlayerInputList.appendChild(components.createPlayerInputElement());
 }

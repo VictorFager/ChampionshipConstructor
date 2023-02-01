@@ -153,7 +153,18 @@ h1 {
   padding-bottom: 2rem;
 }
 
-.history li button {
+.history li {
+  display: flex;
+  align-items: center;
+}
+
+.history li .delete-button {
+  padding: 1rem 2rem;
+  margin: -1.6rem 0 0 1rem;
+  font-size: 2.8rem;
+}
+
+.history li .history-button {
   font-size: 2.6rem;
   font-family: var(--main-font);
   padding: 2rem;
@@ -166,13 +177,13 @@ h1 {
   user-select: none;
 }
 
-.history li button:hover,
-.history li button:focus-visible {
+.history li .history-button:hover,
+.history li .history-button:focus-visible {
   box-shadow: -4px 4px var(--main-yellow), -8px 8px var(--main-orange);
   transform: translate(8px, -8px);
 }
 
-.history li button:active {
+.history li .history-button:active {
   filter: brightness(95%);
   box-shadow: -4px 4px var(--main-orange);
   transform: translate(4px, -4px);

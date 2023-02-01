@@ -13,7 +13,7 @@ const dBackButton = document.getElementById('back-button');
 const dChangeSettingsButton = document.getElementById('change-settings-button');
 const dPauseButton = document.getElementById('pause-button');
 const dAddPlayerButton = document.getElementById('add-player-button');
-const dRemoveButtons = document.getElementsByClassName('remove-button');
+const dRemoveButtons = document.querySelectorAll('.remove-button');
 
 const dCreateForm = document.getElementById('create-form');
 const dPlayerInputList = document.getElementById('player-input-list');
@@ -44,9 +44,13 @@ dPauseButton.addEventListener('click', () => {
   updateView('home');
 });
 
-dAddPlayerButton.addEventListener('click', () => {
-  addPlayer();
-});
+dAddPlayerButton.addEventListener('click', addPlayer);
+
+dRemoveButtons.forEach(dButton => {
+  dButton.addEventListener('click', () => {
+    dButton.parentElement.remove()
+  })
+})
 
 
 // Functions

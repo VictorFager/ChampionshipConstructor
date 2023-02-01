@@ -31,7 +31,7 @@
 
     <!-- HOME -->
 
-    <div id="home-view" class="home-view hidden">
+    <div id="home-view" class="home-view">
 
       <section id="create-section" class="create">
         <button id="create-button" class="create-button">
@@ -42,9 +42,7 @@
 
       <aside id="history-section" class="history">
         <h2>History</h2>
-        <ul>
-          <li><button>Mega Gamenight</button></li>
-          <li><button>4-Kampen</button></li>
+        <ul id="history-list">
         </ul>
         <div class="history-overlay"></div>
       </aside>
@@ -54,7 +52,7 @@
 
     <!-- CREATE -->
 
-    <div id="create-view" class="create-view">
+    <div id="create-view" class="create-view hidden">
 
       <section id="create-form-section" class="create-form">
 
@@ -83,15 +81,7 @@
           <section>
             <ul id="player-input-list">
               <li>
-                <input type="text" name="player" value="Player 1">
-                <button class="remove-button" type="button">x</button>
-              </li>
-              <li>
-                <input type="text" name="player" value="Player 2">
-                <button class="remove-button" type="button">x</button>
-              </li>
-              <li>
-                <input type="text" name="player" value="Player 3">
+                <input type="text" name="player" value="">
                 <button class="remove-button" type="button">x</button>
               </li>
             </ul>
@@ -99,7 +89,7 @@
           </section>
 
           <section>
-            <button type="submit">Generate Championship</button>
+            <button id="create-submit-button" type="submit">Generate Championship</button>
           </section>
 
         </form>
@@ -129,6 +119,8 @@
         <button id="change-settings-button">Change Settings</button>
         <button id="pause-button">Pause Championship</button>
       </section>
+
+      <pre id="temp-championship-info"></pre>
     </div>
 
 

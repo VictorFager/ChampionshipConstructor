@@ -22,6 +22,20 @@ export const components = {
 
     listItem.appendChild(textInput);
     listItem.appendChild(removeButton);
+
+    return listItem;
+  },
+
+  createHistoryListElement(championshipName) {
+
+    const listItem = document.createElement('li');
+
+    const historyButton = document.createElement('button');
+    historyButton.type = 'button';
+    historyButton.textContent = championshipName;
+
+    listItem.appendChild(historyButton);
+
     return listItem;
   }
 }
